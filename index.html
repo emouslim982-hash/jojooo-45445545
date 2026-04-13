@@ -323,46 +323,38 @@
         #letter-view {
     position: fixed;
     inset: 0;
-    display: none;
 
-    justify-content: center;
-    align-items: center;
+    display: none;
+    place-items: center;   /* 🔥 أهم سطر */
 
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(6px);
-    z-index: 9999;
+    z-index: 999999;
 
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
 #letter-view.active {
-    display: flex;
+    display: grid;  /* 🔥 بدل flex */
 }
-        #letter-view.active {
-            display: flex;
-            opacity: 1;
-        }
 
         .love-letter {
-            background: #fff;
-            width: 100%;
-            max-width: 600px;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            background-image: repeating-linear-gradient(white 0px, white 24px, #e9ecef 25px);
-            line-height: 25px;
-            transform: scale(0.8);
-            transition: transform 0.5s ease;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding-right: 10px;
-            -webkit-overflow-scrolling: touch;
-            margin: auto;
-            box-sizing: border-box;
-        }
+    width: min(600px, 95%);
+    margin: auto;
+
+    position: relative;
+
+    background: #fff;
+    padding: 3rem;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    justify-self: center;
+    align-self: center;
+}
 
         #letter-view.active .love-letter {
             transform: scale(1);
@@ -460,10 +452,6 @@
     .love-letter {
         width: 95%;
         padding: 2rem 1.2rem;
-    }
-
-    .love-letter p {
-        font-size: 1.2rem;
     }
 }
     </style>
