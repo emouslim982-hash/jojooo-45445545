@@ -323,32 +323,19 @@
         #letter-view {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    z-index: 50;
-
     display: none;
+
     justify-content: center;
     align-items: center;
+
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
 
     padding: 20px;
     box-sizing: border-box;
 }
-.love-letter {
-    width: min(600px, 95%);
-    margin: auto;
-    position: relative;
-}
-@media (max-width: 600px) {
-    .love-letter {
-        padding: 2rem 1.5rem;
-        font-size: 1rem;
-    }
 
-    .love-letter p {
-        font-size: 1.2rem;
-    }
-}
 #letter-view.active {
     display: flex;
 }
@@ -359,10 +346,10 @@
 
         .love-letter {
             background: #fff;
-            width: 90%;
+            width: 100%;
             max-width: 600px;
             padding: 3rem;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
             background-image: repeating-linear-gradient(white 0px, white 24px, #e9ecef 25px);
@@ -373,11 +360,14 @@
             overflow-y: auto;
             padding-right: 10px;
             -webkit-overflow-scrolling: touch;
+            margin: auto;
+            box-sizing: border-box;
         }
 
         #letter-view.active .love-letter {
             transform: scale(1);
         }
+    
 
         .love-letter h2 {
             font-family: 'Cairo', sans-serif;
@@ -465,6 +455,16 @@
     50% { transform: translate(5px, -5px); }
     75% { transform: translate(-5px, -5px); }
     100% { transform: translate(0, 0); }
+}
+@media (max-width: 600px) {
+    .love-letter {
+        width: 95%;
+        padding: 2rem 1.2rem;
+    }
+
+    .love-letter p {
+        font-size: 1.2rem;
+    }
 }
     </style>
 </head>
