@@ -321,21 +321,37 @@
 
         /* Full Letter View */
         #letter-view {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            z-index: 50;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 50;
 
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+.love-letter {
+    width: min(600px, 95%);
+    margin: auto;
+    position: relative;
+}
+@media (max-width: 600px) {
+    .love-letter {
+        padding: 2rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .love-letter p {
+        font-size: 1.2rem;
+    }
+}
+#letter-view.active {
+    display: flex;
+}
         #letter-view.active {
             display: flex;
             opacity: 1;
